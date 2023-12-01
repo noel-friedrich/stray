@@ -1,7 +1,7 @@
 name: Stray
 description: Chase goals, find coins. Explore your area with the ultimate treasure hunt app!
 publish_to: 'none'
-version: 0.1.0+6
+version: 0.1.1+7
 
 environment:
   sdk: '>=2.19.6 <3.0.0'

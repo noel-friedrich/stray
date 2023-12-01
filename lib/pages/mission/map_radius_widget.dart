@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:Stray/database/database.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,9 @@ class _MapRadiusWidgetState extends State<MapRadiusWidget> {
   }
 
   double calculateZoomLevel() {
-    return 1000 / currCircleRadius * 3 + 10;
+    return 1.4761111111111109e+001 +
+        -1.5966666666666601e-003 * currCircleRadius +
+        1.4888888888888757e-007 * pow(currCircleRadius, 2);
   }
 
   Future<void> updateRadius() async {

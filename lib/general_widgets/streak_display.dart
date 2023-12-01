@@ -10,7 +10,7 @@ class StreakDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 255, 132, 239),
+      color: Theme.of(context).colorScheme.secondary,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
@@ -19,27 +19,27 @@ class StreakDisplay extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Icon(
+            Icon(
               Icons.local_fire_department,
               size: 30,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.onSecondary,
             ),
             const SizedBox(width: 10),
             Text(
               Database.getSetting("screenshot_mode").booleanValue
                   ? "9"
                   : streak.toString(),
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
             ),
-            const Text(
+            Text(
               "-day Streak",
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
             ),
           ],

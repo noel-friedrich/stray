@@ -81,7 +81,7 @@ class _MissionLengthChoiceWidgetState extends State<MissionLengthChoiceWidget> {
                       width: 5,
                     ),
                     Text(
-                      '${(widget.missionLength * 100).round()} (${widget.missionLength.round()}km)',
+                      '${(widget.missionLength * 100).round()} (${widget.missionLength.toStringAsFixed(1)}km)',
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -101,10 +101,10 @@ class _MissionLengthChoiceWidgetState extends State<MissionLengthChoiceWidget> {
                     value: widget.missionLength,
                     min: 0,
                     max: 5,
-                    divisions: 5,
-                    label: "${widget.missionLength.round()} km",
+                    divisions: 50,
+                    label: "${widget.missionLength.toStringAsFixed(1)} km",
                     onChanged: (double value) {
-                      if (value < 1) {
+                      if (value < 0.5) {
                         return;
                       }
 
